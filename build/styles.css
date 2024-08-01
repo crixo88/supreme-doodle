@@ -64,6 +64,18 @@ main {
     display: block;
 }
 
+.tab-content {
+    position: relative;
+    padding: 20px;
+}
+.tab-subtitle {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
 .content-section {
     margin-bottom: 20px;
 }
