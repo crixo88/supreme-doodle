@@ -1,0 +1,144 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-bottom: 2px solid #007bff;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #007bff;
+    border: 2px solid transparent;
+    border-radius: 5px 5px 0 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab.active {
+    background-color: #007bff;
+    color: #fff;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #007bff;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: left;
+    align-items: center;
+}
+
+.content-section img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.content-section img:hover {
+    transform: scale(1.05);
+}
+
+.text-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.content-section img:hover + .text-content {
+    opacity: 1;
+}
+
+blockquote {
+    font-style: italic;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 4px solid #007bff;
+    background-color: #f0f8ff;
+    font-size: 1.25rem;
+    border-radius: 4px;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#dolarValue {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #007bff;
+}
+
+@media (min-width: 768px) {
+    .content-section {
+        flex-direction: row;
+    }
+
+    .content-section img {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .content-section div {
+        width: 50%;
+    }
+
+    .text-content {
+        opacity: 1;
+        transition: none;
+    }
+}
