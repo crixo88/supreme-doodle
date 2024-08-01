@@ -1,64 +1,63 @@
 body {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
     background-color: #f0f2f5;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
 header {
     background-color: #007bff;
     color: #fff;
-    padding: 20px;
-    width: 100%;
+    padding: 10px 20px; /* Reducir el padding */
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    font-size: 1.5rem; /* Reducir el tamaño de la fuente */
 }
 
-h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    font-weight: 700;
+header h1 {
+    font-size: 1.5rem; /* Reducir el tamaño de la fuente del encabezado */
+    margin: 0; /* Eliminar el margen para ajustar el padding */
+}
+
+main {
+    padding-top: 30px; /* Ajusta este valor según el tamaño del header */
+    flex: 1;
 }
 
 .tabs {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    border-bottom: 2px solid #007bff;
+    margin-top: 30px; /* Ajusta este valor según la altura del header */
 }
-
-.tab {
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: 700;
+.tabs .tab a {
     color: #007bff;
-    border: 2px solid transparent;
-    border-radius: 5px 5px 0 0;
-    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
 }
 
-.tab.active {
+.tabs .tab a.active {
     background-color: #007bff;
     color: #fff;
-    border-bottom: 2px solid transparent;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+    background-color: #007bff !important;
+    outline: none;
 }
 
 .tab-content {
     display: none;
     padding: 20px;
     width: 100%;
-    max-width: 800px;
     text-align: center;
     background-color: #fff;
-    border: 2px solid #007bff;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 .tab-content.active {
@@ -66,34 +65,19 @@ h1 {
 }
 
 .content-section {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 20px;
-    text-align: left;
-    align-items: center;
 }
 
 .content-section img {
     width: 100%;
     height: auto;
-    max-width: 600px;
     margin-bottom: 20px;
     border-radius: 8px;
-    cursor: pointer;
     transition: transform 0.3s;
 }
 
 .content-section img:hover {
     transform: scale(1.05);
-}
-
-.text-content {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.content-section img:hover + .text-content {
-    opacity: 1;
 }
 
 blockquote {
@@ -110,35 +94,18 @@ p {
     font-size: 1.1rem;
 }
 
-canvas {
-    border: 1px solid #ccc;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+#radarChart {
+    max-width: 100%; /* Asegura que el gráfico no exceda el ancho del contenedor */
+    height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+    margin: 20px;
 }
+
+
 
 #dolarValue {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 20px 0;
     color: #007bff;
-}
-
-@media (min-width: 768px) {
-    .content-section {
-        flex-direction: row;
-    }
-
-    .content-section img {
-        width: 50%;
-        margin-right: 20px;
-    }
-
-    .content-section div {
-        width: 50%;
-    }
-
-    .text-content {
-        opacity: 1;
-        transition: none;
-    }
 }
