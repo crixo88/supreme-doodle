@@ -1,23 +1,32 @@
 function resizeChart() {
     const chart = document.getElementById('radarChart');
-    chart.style.width = '50%'; /* Ajusta este valor según sea necesario */
-    chart.style.height = '50%'; /* Mantiene la proporción */
+    const windowWidth = window.innerWidth;
+
+    if (windowWidth < 600) { // Umbral para dispositivos móviles
+        chart.style.width = '50%';
+        chart.style.height = '50%';
+    } else {
+        chart.style.width = '10%';
+        chart.style.height = '10%';
+    }
 }
 
 window.addEventListener('resize', resizeChart);
 window.addEventListener('load', () => {
     resizeChart();
     var ctx = document.getElementById('radarChart').getContext('2d');
+    var windowWidth = window.innerWidth; // Definimos windowWidth aquí para usarla en pointLabels
+
     var radarChart = new Chart(ctx, {
         type: 'radar',
         data: {
             labels: [
-                'Conocimientos',
-                'Trabajo en Equipo',
-                'Curiosidad',
-                'Resolución de Problemas',
-                'Creatividad',
-                'Adaptabilidad'
+                'knowledge',
+                'TeamWork',
+                'Curiosity',
+                'Resolver',
+                'Creativity',
+                'Adaptability'
             ],
             datasets: [{
                 data: [75, 90, 100, 85, 95, 90],
@@ -30,7 +39,7 @@ window.addEventListener('load', () => {
             plugins: {
                 title: {
                     display: true,
-                    text: 'Habilidades de Cristian Casale',
+                    text: 'Skills',
                     padding: {
                         bottom: 10
                     },
@@ -60,7 +69,7 @@ window.addEventListener('load', () => {
                     pointLabels: {
                         color: 'black',
                         font: {
-                            size: 16
+                            size: windowWidth < 600 ? 12 : 16 // Ajuste de tamaño del texto
                         }
                     }
                 }

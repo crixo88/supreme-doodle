@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Cristian Casale</title>
+    <title>Cristian Casale Profile</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -12,16 +12,16 @@
 </head>
 <body>
 <header>
-    <h1>Perfil de Cristian Casale</h1>
+    <h1>Cristian Casale Profile</h1>
 </header>
 
 <main class="container">
     <div class="row">
         <div class="col s12">
             <ul class="tabs">
-                <li class="tab col s4"><a class="active" href="#tab1">Quién Soy</a></li>
-                <li class="tab col s4"><a href="#tab2">Habilidades</a></li>
-                <li class="tab col s4"><a href="#tab3">Dólar Blue Hoy</a></li>
+                <li class="tab col s4"><a class="active" href="#tab1">Who am I?</a></li>
+                <li class="tab col s4"><a href="#tab2">Skills</a></li>
+                <li class="tab col s4"><a href="#tab3">Blue Dollar Today</a></li>
             </ul>
         </div>
     </div>
@@ -29,21 +29,21 @@
     <div id="tab1" class="tab-content active">
         <div class="row content-section">
             <div class="col s12 m6">
-                <img src="https://media.es.wired.com/photos/64aed23f721d1170b8ceb337/16:9/w_1600,c_limit/IA%201467639088.jpg" alt="Pasión por la Tecnología" class="responsive-img">
+                <img src="https://media.es.wired.com/photos/64aed23f721d1170b8ceb337/16:9/w_1600,c_limit/IA%201467639088.jpg" alt="Passion for Technology" class="responsive-img">
             </div>
             <div class="col s12 m6">
-                <blockquote>"La <strong>IA</strong> es el motor del futuro, y estoy <strong>emocionado</strong> por ver dónde nos lleva."</blockquote>
-                <p>Soy un desarrollador web con pasión por la <strong>IA</strong>. Tengo experiencia en <strong>PHP</strong> y <strong>Java</strong>, y actualmente aprendo <strong>Kotlin</strong>. Mi enfoque está en soluciones <strong>innovadoras</strong> y <strong>tecnología avanzada</strong>.</p>
+                <blockquote>"<strong>AI</strong> is the engine of the future, and I am <strong>excited</strong> to see where it takes us."</blockquote>
+                <p>I am a web developer with a passion for <strong>AI</strong>. I have experience in <strong>PHP</strong> and <strong>Java</strong>, and I am currently learning <strong>Kotlin</strong>. My focus is on <strong>innovative</strong> solutions and <strong>advanced technology</strong>.</p>
             </div>
         </div>
 
         <div class="row content-section">
             <div class="col s12 m6">
-                <blockquote>"<strong>Innovar</strong> es ver lo que todos han visto y pensar lo que nadie ha pensado."</blockquote>
-                <p>Me mantengo al día con las últimas <strong>tendencias</strong> en desarrollo web y <strong>IA</strong>. Mi objetivo es aplicar estos conocimientos para desarrollar <strong>soluciones eficientes</strong>.</p>
+                <blockquote>"<strong>Innovating</strong> is seeing what everyone has seen and thinking what no one has thought."</blockquote>
+                <p>I stay up-to-date with the latest <strong>trends</strong> in web development and <strong>AI</strong>. My goal is to apply this knowledge to develop <strong>efficient solutions</strong>.</p>
             </div>
             <div class="col s12 m6">
-                <img src="https://www.esic.edu/sites/default/files/2024-05/innovacion%20abierta.jpeg" alt="Innovación" class="responsive-img">
+                <img src="https://www.esic.edu/sites/default/files/2024-05/innovacion%20abierta.jpeg" alt="Innovation" class="responsive-img">
             </div>
         </div>
     </div>
@@ -53,12 +53,19 @@
     </div>
 
     <div id="tab3" class="tab-content">
-        <div id="dolarValue">Cargando el valor del dólar blue...</div>
+        <div id="dolarValue">Loading values...</div>
+        <div class="input-field col s12">
+            <select id="currencySelect">
+                <option value="" disabled selected>Choose a currency</option>
+            </select>
+            <label>Select another currency</label>
+        </div>
     </div>
 </main>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="chart.js"></script>
 <script src="tabs.js"></script>
-<script src="dollar.js"></script></body>
+<script src="dollar.js"></script>
+</body>
 </html>
