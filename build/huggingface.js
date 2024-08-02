@@ -22,11 +22,9 @@ async function fetchGeneratedText() {
                 'Authorization': `Bearer ${token}`
             }
         });
-        console.log('Response 1:', response1);
 
         // Extraer el texto generado y limpiar cualquier prefijo no deseado
         const generatedText1 = extractGeneratedText(response1.data?.[0]?.generated_text, generatePrompt(originalText1)) || originalText1;
-        console.log('Generated Text 1:', generatedText1);
         updateTextContent(generatedText1, 0);
 
         // Segunda llamada a la API para generar texto para el segundo blockquote
@@ -37,11 +35,9 @@ async function fetchGeneratedText() {
                 'Authorization': `Bearer ${token}`
             }
         });
-        console.log('Response 2:', response2);
 
         // Extraer el texto generado y limpiar cualquier prefijo no deseado
         const generatedText2 = extractGeneratedText(response2.data?.[0]?.generated_text, generatePrompt(originalText2)) || originalText2;
-        console.log('Generated Text 2:', generatedText2);
         updateTextContent(generatedText2, 1);
 
     } catch (error) {
@@ -54,7 +50,6 @@ async function fetchGeneratedText() {
 function extractGeneratedText(fullText, promptText) {
     // Verifica que el texto generado esté presente
     if (fullText) {
-        console.log('Full Text:', fullText);
         // Divide el texto generado en base al texto original utilizado
         const startIndex = fullText.indexOf(promptText);
         if (startIndex !== -1) {
@@ -68,8 +63,6 @@ function extractGeneratedText(fullText, promptText) {
 
 function updateTextContent(text, index) {
     const blockquotes = document.querySelectorAll('blockquote');
-    console.log(blockquotes);
-    console.log(text);
     // Actualiza el texto dentro del blockquote correspondiente
     if (blockquotes.length > index) {
         blockquotes[index].innerHTML = `"${text}"`;
