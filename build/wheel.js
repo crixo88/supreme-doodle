@@ -28,7 +28,7 @@ function spinWheel() {
         ease: 'power4.out',
         onComplete: () => {
             const option = options[options.length - Math.floor((targetDeg % 360) / angleStep) - 1];
-            resultText.innerHTML = `¡Te toca hacer: ${option.text}!`;
+            resultText.innerHTML = `${option.text}!`;
             resultModal.style.display = 'block';
         }
     });
