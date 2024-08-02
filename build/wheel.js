@@ -5,13 +5,14 @@ const resultText = document.getElementById('resultText');
 const closeModal = document.querySelector('.close');
 
 const options = [
-    { text: "Ver una película en casa y palomitas de maiz", color: "#FF5733" },
-    { text: "Ir a un parque", color: "#33FF57" },
-    { text: "Hacer una cena especial", color: "#3357FF" },
-    { text: "Visitar a la abuela", color: "#FF33A1" },
-    { text: "Inventar un juego en casa", color: "#FFBF00" },
-    { text: "Salir a caminar por la ciudad", color: "#00BFFF" }
+    { text: "Watch a movie at home and have popcorn", color: "#FF5733" },
+    { text: "Go to a park", color: "#33FF57" },
+    { text: "Make a special dinner", color: "#3357FF" },
+    { text: "Visit grandma", color: "#FF33A1" },
+    { text: "Invent a game at home", color: "#FFBF00" },
+    { text: "Go for a walk around the city", color: "#00BFFF" }
 ];
+
 
 const angleStep = 360 / options.length;
 const colorStops = options.map((option, index) => `${option.color} ${index * (100 / options.length)}% ${((index + 1) * (100 / options.length))}%`).join(", ");
