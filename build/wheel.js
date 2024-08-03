@@ -10,9 +10,14 @@ const options = [
     { text: "Make a special dinner", color: "#3357FF" },
     { text: "Visit grandma", color: "#FF33A1" },
     { text: "Invent a game at home", color: "#FFBF00" },
-    { text: "Go for a walk around the city", color: "#00BFFF" }
+    { text: "Go for a walk around the city", color: "#00BFFF" },
+    { text: "Visit a interesting place", color: "#FFD700" },
+    { text: "Plan a weekend trip", color: "#00FF7F" },
+    { text: "Have a dinner with friends", color: "#FF4500" },
+    { text: "Do a creative project", color: "#1E90FF" },
+    { text: "Stay quite in home", color: "#8A2BE2" },
+    { text: "Play board games", color: "#DC143C" }
 ];
-
 
 const angleStep = 360 / options.length;
 const colorStops = options.map((option, index) => `${option.color} ${index * (100 / options.length)}% ${((index + 1) * (100 / options.length))}%`).join(", ");
@@ -24,11 +29,11 @@ function spinWheel() {
     const targetDeg = 360 * 3 + (randomIndex * angleStep);
     gsap.to(wheel, {
         duration: 3,
-        rotation: targetDeg,
+        rotation: `+=${targetDeg}`,
         ease: 'power4.out',
         onComplete: () => {
             const option = options[options.length - Math.floor((targetDeg % 360) / angleStep) - 1];
-            resultText.innerHTML = `¡Te toca hacer: ${option.text}!`;
+            resultText.innerHTML = `${option.text}!`;
             resultModal.style.display = 'block';
         }
     });
